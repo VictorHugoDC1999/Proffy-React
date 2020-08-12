@@ -1,0 +1,144 @@
+#page-landing {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-text-in-primary);
+    background: var(--color-primary);
+}
+
+.logo-container img {
+    height: 10rem;
+}
+
+.hero-image {
+    width: 100%;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+.logo-container h2 {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+.buttons-container a {
+    width: 30rem;
+    height: 10.4rem;
+    border-radius: 0.8rem;
+    font: 700 2.0rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: var(--color-button-text);
+
+    transition: background-color 0.2s;
+}
+
+.buttons-container a:first-child {/*fazendo assim estou colocando a margem apenas no primeiro botão*/
+    margin-right: 1.6rem;
+}
+
+.buttons-container a img {
+    width: 4rem;
+}
+
+.buttons-container a.study {
+    background: var(--color-primary-lighter);
+}
+
+.buttons-container a.give-classes {
+    background: var(--color-secundary);
+}
+
+.buttons-container a.study:hover {
+    background: var(--color-primary-light);
+}
+
+.buttons-container a.give-classes:hover {
+    background: var(--color-secundary-dark);
+}
+
+.buttons-container a img {
+    margin-right: 2.4rem;/*aqui estamos dando uma distancia do texto (estudar) e do icone que fica dentro do nosso botçao */
+}
+
+.total-connections {
+    font-size: 1.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-connections img {
+    margin-left: 0.8rem;
+}
+
+@media (min-width: 1100px) {/*aqui estamo definindo nosso estilo para desktops, pois o layout acima serve apenas para mobile, ou seja, estamos adaptando nossa tela para desktop*/
+    #page-landing-content {
+        max-width: 1100px;
+
+        display: grid;
+        grid-template-rows: 350px 1fr;/*aqui estamos dizendo que temos duas linhas, a primeira linha ocupa uma altura fixa de 350px e a segunda ocupa todo o restante, por isso colocamos 1fr*/
+        grid-template-columns: 2fr 1fr 1fr;/*são 3 colunas a primeira coluna ocupa um espaço 2 vezes maior que as outras (50%) e as outras duas ocupam o mesmo espaço (25% cada)*/
+        grid-template-areas: 
+        "logo hero hero"
+        "buttons buttons total"
+        ;/*aqui é a forma da gente falar o que que vai ficar em cada das colunas e linhas. Na primeira coluna temos a logo(proffy) e nas duas ultimas é a nossa hero img(isto tudo na primeira linha)
+        Agora nas duas primeiras colunas sera nossos botões e no ultimo sera o nosso total*/
+    }
+
+    .logo-container {/*aqui acontece a magica do nosso display grid*/
+        grid-area: logo;/*aqui estamos dizendo que a area que meu logo container ocupa no grid é a area chamada logo (estamos associando o grid-template-areas, com o grid-area daqui)*/
+        align-self: center;/*fazendo assim ele fica alinhado no meio e não no topo da nossa page*/
+        margin: 0;/*aqui colocamos uma margem 0 pois não precisamos de margem no desktop, a margem (esta margem ficava abaixo do logo) seria apenas para o mobile para que o nosso logo não ficasse perto da imagem*/
+        text-align: left;/*para ele ficar alinhado a esquerda*/
+
+    }
+
+    .logo-container h2 {
+        text-align: initial;
+        font-size: 3.6rem;
+    }
+
+    .logo-container img {
+        height: 100%;
+    }
+
+    .hero-image {
+        grid-area: hero;/*aqui segue a mesma funcionalidade que o logo acima e nos demais abaixo tambem*/
+        justify-self: end;/*isso aqui é apenas para que ele com certeza ir para o final, ou seja, ficar alinhado para a direta*/
+    }
+
+    .buttons-container {
+        grid-area: buttons;
+        justify-content: flex-start;/*aqui estamos garantindo que ele vai iniciar sempre a esquerda, ou seja, ocupar o lado esquerdo todo*/
+    }
+
+    .buttons-container a {
+        font-size: 2.4rem;
+    }
+
+    .total-connections {
+        grid-area: total;
+        justify-self: end;/*para ele ir para a direita, ou seja, alinhar do lado direito*/
+    }
+}
