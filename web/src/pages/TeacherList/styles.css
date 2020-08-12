@@ -1,0 +1,47 @@
+#page-teacher-list{
+    width: 100vw;
+    height: 100vh;
+}
+
+.page-header {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary);
+}
+
+.page-header .top-bar-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;/*aqui fizemos assim pois queremos que o icone de voltar fique totalmente pra esquerda e a logo totalmenete pra direita*/
+    align-items: center;/*aqui fizemos assim pois queremos que os dois verticalmente estejam centralizados*/
+    color: var(--color-text-in-primary);
+    padding: 1.6rem 0;
+}
+
+.page-header .top-bar-container a {
+    height: 3.2rem;
+    transition: opacity 0.2s;/*fizemos colocamos o transition por que quando eu passar o mouse por cima eu quero que ele de uma leve diminuida (completamos isso em .page-header .top-bar-container a:hover, logo abaixo)*/
+}
+
+.page-header .top-bar-container a:hover {
+    opacity: 0.6;
+}
+
+.page-header .top-bar-container > img {/*fazendo assim estamos pegando a imagem: logoImg*/
+    height: 1.6rem;
+}
+
+.page-header .header-content {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    margin: 3.2rem auto;/*aqui fizemos assim para que ele faça margem em cima e embaixo e na direita deixar centralizado horizontalmente*/
+}
+
+.page-header .header-content strong {
+    font: 700 3.6rem Archivo;
+    line-height: 4.2rem;
+    color: var(--color-title-in-primary);
+}
+
